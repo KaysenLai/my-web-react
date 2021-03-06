@@ -1,0 +1,18 @@
+.sign-in-layout {
+  height: 100%;
+  min-height: 720px;
+  display: flex;
+
+  &__left {
+	width: 100%;
+	flex: 2;
+
+  }
+
+  &__right {
+	width: 100%;
+	flex: 0;
+	//background: linear-gradient(149.52deg, #3E98EA 6.55%, #5CBEF5 43.38%, #5CD6D5 100%);
+	background-color: grey;
+  }
+}
