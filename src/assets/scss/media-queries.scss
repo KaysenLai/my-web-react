@@ -1,38 +1,32 @@
-$XS: 320px; //mobile small
-$S: 425px; //mobile
-$M: 768px; //tablet
-$L: 1024px; //tablet horizontal
-$XL: 1440px; //Desktop HD
-$XXL: 1920px; //Desktop 4K
+$xs: 0px;
+$sm: 600px;
+$md: 960px;
+$lg: 1280px;
+$xl: 1920px;
 
-@mixin MQ($canvas) {
-  @if $canvas==XS {
-	@media screen and (max-width: $XS) {
+@mixin mq($canvas) {
+  @if $canvas==xs {
+	@media screen and (max-width: $xs) {
 	  @content;
 	}
   }
-  @if $canvas==S {
-	@media screen and (max-width: $S) {
+  @if $canvas==sm {
+	@media screen and (max-width: $sm) {
 	  @content;
 	}
   }
-  @else if $canvas==M {
-	@media screen and (max-width: $M) {
+  @else if $canvas==md {
+	@media screen and (max-width: $md) {
 	  @content;
 	}
   }
-  @else if $canvas==L {
-	@media screen and (max-width: $L) {
+  @else if $canvas==lg {
+	@media screen and (max-width: $lg) {
 	  @content;
 	}
   }
-  @else if $canvas==XL {
-	@media screen and (max-width: $XL) {
-	  @content;
-	}
-  }
-  @else if $canvas==XXL {
-	@media screen and (max-width: $XXL) {
+  @else if $canvas==xl {
+	@media screen and (max-width: $xl) {
 	  @content;
 	}
   }
