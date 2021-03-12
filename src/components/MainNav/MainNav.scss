@@ -1,0 +1,61 @@
+@import "../../assets/scss/variables";
+
+#root  {
+  .MuiAppBar-colorPrimary {
+	color: #fff;
+	background-color: $black-main;
+  }
+  .MuiTabs-indicator {
+	background-color: $magenta;
+  }
+  .MuiTabs-flexContainer {
+	display: inline-flex;
+  }
+  .MuiTabs-root {
+	width: min-content;
+	display: inline-flex;
+  }
+  .MuiTabs-fixed {
+	display: inline-flex;
+  }
+  .MuiTab-root {
+	padding: 8px 30px;
+	max-width: unset;
+	min-width: unset;
+	color: white;
+	transition: color 0.3s ease;
+  }
+  a {
+	color: white;
+	text-decoration: none;
+	font-family: 'Staatliches', cursive !important;
+	font-size: 26px;
+	letter-spacing: 0.1em;
+  }
+}
+
+#root {
+  .main-nav-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	.main-nav__logo {
+	  width: 100px;
+	  height: 43px;
+	  animation-fill-mode: forwards;
+	  transform: scale(0.82);
+	  &:hover {
+		animation: moveY 2s steps(49);
+		cursor: pointer;
+		animation-fill-mode: forwards;
+	  }
+	}
+  }
+
+}
+
+@keyframes moveY{
+  from{ background-position-y: 0; }
+  to{ background-position-y:-2107px; }
+}
