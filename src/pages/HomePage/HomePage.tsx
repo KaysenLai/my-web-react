@@ -1,13 +1,21 @@
 import React from 'react';
 import './HomePage.scss';
+import { Container, Typography } from '@material-ui/core';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="home-page container-fluid">
-      <section className="container border py-5">asdfasfd</section>
-      <section className="container border">asdfasfd</section>
-      <section className="container border">asdfasfd</section>
-    </div>
+    <main className="home-page">
+      <section className="intro">
+        <Container>
+          <Typography variant="body1">className="home-page"</Typography>
+        </Container>
+      </section>
+      <section className="cards">
+        <Container>
+          <Typography variant="body1">className="home-page"</Typography>
+        </Container>
+      </section>
+    </main>
   );
 };
 
