@@ -11,7 +11,6 @@ const App: React.FC = () => {
         <MainNav />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          {/*<Route exact path="/saga-demo" component={DemoSage} />*/}
         </Switch>
       </div>
     </Router>

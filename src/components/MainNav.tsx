@@ -3,36 +3,20 @@ import { Link } from 'react-router-dom';
 
 const navLinks = [
   {
-    title: 'Home Page',
+    title: 'Home',
     path: '/',
   },
   {
-    title: 'Ben Page',
-    path: '/ben-page',
+    title: 'Resume',
+    path: '/resume',
   },
   {
-    title: 'chaokai page',
-    path: '/chaokai-page',
+    title: 'Gallery',
+    path: '/gallery',
   },
   {
-    title: 'Jin Page',
-    path: '/jin-page',
-  },
-  {
-    title: 'Lin Page',
-    path: '/lin-page',
-  },
-  {
-    title: 'Shawn Page',
-    path: '/shawn-page',
-  },
-  {
-    title: 'Yuming Page',
-    path: '/yuming-page',
-  },
-  {
-    title: 'Zhian Page',
-    path: '/zhian-page',
+    title: 'Contact',
+    path: '/contact',
   },
 ];
 
