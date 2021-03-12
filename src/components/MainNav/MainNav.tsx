@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import './MainNav.scss';
 import { AppBar, Drawer, Tabs, Tab, Container, Hidden, IconButton } from '@material-ui/core';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import navLogo from '../../assets/img/logo-css-sprites.png';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useWindowWidth } from '@react-hook/window-size';
 
 export default function CenteredTabs() {
   const [value, setValue] = React.useState(0);
@@ -25,6 +26,13 @@ export default function CenteredTabs() {
     setOpen(!open);
   };
 
+  const onlyWidth = useWindowWidth();
+  useMemo(() => {
+    if (onlyWidth > 960) {
+      setOpen(false);
+    }
+  }, [onlyWidth]);
+
   return (
     <AppBar position="static" className="main-nav">
       <Container className="main-nav-container">
@@ -41,10 +49,22 @@ export default function CenteredTabs() {
             <MenuIcon fontSize="large" />
           </IconButton>
         </Hidden>
-        <Drawer anchor="left" open={open} onClose={toggleDrawer}>
+        <Drawer
+          anchor="left"
+          open={open}
+          onClose={() => {
+            setOpen(false);
+          }}
+        >
           <List>
             {navLinks.map((item, index) => (
-              <ListItem button key={item.title}>
+              <ListItem
+                button
+                key={item.title}
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
                 <Link to={item.path}>
                   <ListItemText primary={item.title} />
                 </Link>

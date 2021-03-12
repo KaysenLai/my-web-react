@@ -1,4 +1,5 @@
 @import "../../assets/scss/variables";
+@import "../../assets/scss/media-queries";
 
 #root  {
   .MuiAppBar-root {
@@ -13,6 +14,13 @@
   }
 
   .main-nav {
+	.MuiTab-root {
+	  background-color: $black-main;
+	  &:hover {
+		background-color: $black-light;
+		transition: background-color 0.3s ease;
+	  }
+	}
 	.MuiTabs-indicator {
 	  background-color: $magenta;
 	}
@@ -48,10 +56,13 @@
   .MuiList-root {
 	width: 240px ;
 	color: white;
-	padding: 50px 20px;
+	padding: 50px 30px;
+	@include mq(sm) {
+	  padding: 50px 20px;
+	}
   }
   .MuiListItem-root {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 4px;
 	&:hover {
 	  background-color: $black-light;
@@ -62,7 +73,9 @@
 	a {
 	  text-decoration: none;
 	}
+
 	.MuiListItemText-root span{
+	  line-height: 26px;
 	  transition: opacity 0.2s ease;
 	  color: white;
 	  font-size: 26px;
