@@ -6,16 +6,49 @@ import photo from '../../assets/img/home-page-photo.jpg';
 import photoMask from '../../assets/img/home-page-photo-mask.png';
 import GhostButton from '../../components/GhostButton/GhostButton';
 import Typed from 'react-typed';
+import SkillCard from '../../components/skillCard/skillCard';
+import codeIcon from '../../assets/img/skill-code.png';
+import designIcon from '../../assets/img/skill-design.png';
+import cameraIcon from '../../assets/img/skill-camera.png';
+import lightIcon from '../../assets/img/skill-light.png';
 
-// const typed = new Typed('.home__header__intro-content__text__typed-text', {
-//   strings: ['Web developer.', 'Designer.', 'Photographer.'],
-//   typeSpeed: 100,
-//   backSpeed: 70,
-//   loop: true,
-//   backDelay: 3000,
-// });
+interface skillCard {
+  title: string;
+  description: string;
+  icon: any;
+}
+type skillCards = Array<skillCard>;
 
-// var typed = new Typed('.element', options);
+const skillCards: skillCards = [
+  {
+    title: 'code',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
+      'et minus nobis nostrum obcaecati officiis.',
+    icon: codeIcon,
+  },
+  {
+    title: 'design',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
+      'et minus nobis nostrum obcaecati officiis.',
+    icon: designIcon,
+  },
+  {
+    title: 'photography',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
+      'et minus nobis nostrum obcaecati officiis.',
+    icon: cameraIcon,
+  },
+  {
+    title: 'light',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
+      'et minus nobis nostrum obcaecati officiis.',
+    icon: lightIcon,
+  },
+];
 
 const HomePage: React.FC = () => {
   const history = useHistory();
@@ -65,9 +98,33 @@ const HomePage: React.FC = () => {
           </div>
         </Container>
       </section>
-      <section className="cards">
+      <section className="skill">
         <Container>
-          <Typography variant="body1">className="home-page"</Typography>
+          <h2>Skill</h2>
+          <div className="skill-cards">
+            {/*<SkillCard />*/}
+            <Grid container justify="center">
+              <Grid container item spacing={4} xs={12} sm={10} md={12}>
+                {skillCards.map((item) => (
+                  <Grid item xs={6} md={3} key={item.title}>
+                    <SkillCard title={item.title} description={item.description} icon={item.icon} />
+                  </Grid>
+                ))}
+                {/*<Grid item xs={6} md={3}>*/}
+                {/*  <SkillCard />*/}
+                {/*</Grid>*/}
+                {/*<Grid item xs={6} md={3}>*/}
+                {/*  <SkillCard />*/}
+                {/*</Grid>*/}
+                {/*<Grid item xs={6} md={3}>*/}
+                {/*  <SkillCard />*/}
+                {/*</Grid>*/}
+                {/*<Grid item xs={6} md={3}>*/}
+                {/*  <SkillCard />*/}
+                {/*</Grid>*/}
+              </Grid>
+            </Grid>
+          </div>
         </Container>
       </section>
       <section className="cards">
