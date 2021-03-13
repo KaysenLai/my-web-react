@@ -1,9 +1,10 @@
 import React from 'react';
 import './HomePage.scss';
-import { Container, Typography } from '@material-ui/core';
+import { Container, Typography, Hidden, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import photo from '../../assets/img/home-page-photo.jpg';
 import photoMask from '../../assets/img/home-page-photo-mask.png';
+import GhostButton from '../../components/GhostButton/GhostButton';
 
 const HomePage: React.FC = () => {
   return (
@@ -15,15 +16,29 @@ const HomePage: React.FC = () => {
         </div>
         <Container>
           <div className="intro__content">
-            <div className="intro__content-text">
-              {/*<h2>i’m a <br><span className="home__header__intro-content__text__typed-text"/></h2>*/}
-              <div className="intro__content-text__wrap">
-                <h3>chaokai lai</h3>
-                <Link to="/resume">
-                  <button className="ghost-button">resume</button>
-                </Link>
-              </div>
-            </div>
+            <Grid className="intro__content-container" container alignItems="center" xs={12}>
+              <Hidden xsDown>
+                <Grid item sm={1} md={3} lg={4} />
+              </Hidden>
+              <Grid className="intro__content-item" container justify="flex-end" item xs={12} sm={11} md={9} lg={7}>
+                <Grid className="intro__content-text" item container xs={12}>
+                  <Grid item>
+                    <p>I'm a</p>
+                  </Grid>
+                  <Grid item>
+                    <p>web developer.</p>
+                  </Grid>
+                </Grid>
+                <Grid item container alignItems="center" xs={12}>
+                  <Grid item>
+                    <span className="intro-name">Chaokai Lai</span>
+                  </Grid>
+                  <Grid item>
+                    <GhostButton />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </div>
         </Container>
       </section>

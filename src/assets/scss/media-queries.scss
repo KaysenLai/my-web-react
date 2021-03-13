@@ -10,7 +10,7 @@ $xl: 1920px;
 	  @content;
 	}
   }
-  @if $canvas==sm {
+  @else if $canvas==sm {
 	@media screen and (max-width: $sm) {
 	  @content;
 	}
@@ -27,6 +27,12 @@ $xl: 1920px;
   }
   @else if $canvas==xl {
 	@media screen and (max-width: $xl) {
+	  @content;
+	}
+  }
+
+  @else {
+	@media screen and (max-width: $canvas) {
 	  @content;
 	}
   }
