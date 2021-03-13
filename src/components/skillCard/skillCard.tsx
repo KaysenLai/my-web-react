@@ -1,11 +1,6 @@
 import React from 'react';
 import './skillCard.scss';
-
-interface skillCard {
-  title: string;
-  description: string;
-  icon: any;
-}
+import { skillCard } from '../../types';
 
 const SkillCard: React.FC<skillCard> = (props) => {
   const { title, description, icon } = props;

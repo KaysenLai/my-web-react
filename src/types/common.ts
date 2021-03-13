@@ -9,3 +9,10 @@ export interface NavLink {
 }
 
 export type NavLinks = Array<NavLink>;
+
+export interface skillCard {
+  title: string;
+  description: string;
+  icon: any;
+}
+export type skillCards = Array<skillCard>;

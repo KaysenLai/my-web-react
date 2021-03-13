@@ -11,13 +11,7 @@ import codeIcon from '../../assets/img/skill-code.png';
 import designIcon from '../../assets/img/skill-design.png';
 import cameraIcon from '../../assets/img/skill-camera.png';
 import lightIcon from '../../assets/img/skill-light.png';
-
-interface skillCard {
-  title: string;
-  description: string;
-  icon: any;
-}
-type skillCards = Array<skillCard>;
+import { skillCards } from '../../types';
 
 const skillCards: skillCards = [
   {
@@ -102,7 +96,6 @@ const HomePage: React.FC = () => {
         <Container>
           <h2>Skill</h2>
           <div className="skill-cards">
-            {/*<SkillCard />*/}
             <Grid container justify="center">
               <Grid container item spacing={4} xs={12} sm={10} md={12}>
                 {skillCards.map((item) => (
@@ -110,18 +103,6 @@ const HomePage: React.FC = () => {
                     <SkillCard title={item.title} description={item.description} icon={item.icon} />
                   </Grid>
                 ))}
-                {/*<Grid item xs={6} md={3}>*/}
-                {/*  <SkillCard />*/}
-                {/*</Grid>*/}
-                {/*<Grid item xs={6} md={3}>*/}
-                {/*  <SkillCard />*/}
-                {/*</Grid>*/}
-                {/*<Grid item xs={6} md={3}>*/}
-                {/*  <SkillCard />*/}
-                {/*</Grid>*/}
-                {/*<Grid item xs={6} md={3}>*/}
-                {/*  <SkillCard />*/}
-                {/*</Grid>*/}
               </Grid>
             </Grid>
           </div>
