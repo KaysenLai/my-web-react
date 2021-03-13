@@ -1,4 +1,5 @@
 @import "../../assets/scss/media-queries";
+@import "../../assets/scss/variables";
 
 .home-page {
   section{
@@ -10,19 +11,29 @@
 .home-page .intro {
   position: relative;
   height: 674px;
-
+  @include mq($sm) {
+	height: 400px;
+  }
   .intro__background {
 	width: 100%;
 	position: relative;
-
 	.background-photo {
 	  width: 100%;
 	  height: 674px;
 	  position: absolute;
-	  background-position: center;
+	  background-position: 30% center;
 	  background-repeat: no-repeat;
 	  background-size: cover;
-
+	  @include mq($lg) {
+		background-position: 20% center;
+	  }
+	  @include mq($md) {
+		background-position: 20% center;
+	  }
+	  @include mq($sm) {
+		height: 400px;
+		background-position: 4% center;
+	  }
 	  &-main {
 		z-index: 1;
 		animation: hue-rotate 15s linear infinite;
@@ -38,59 +49,99 @@
 	height: 100%;
 	display: flex;
 	align-items: center;
-
+	@include mq($sm) {
+	  height: 400px;
+	}
 	.intro__content {
 	  width: 100%;
 	  background-color: rgba(0, 0, 0, 0.5);
 	  border-radius: 30px;
 	  height: 280px;
-
+	  @include mq($md) {
+		height: 340px;
+		border-radius: 20px;
+	  }
+	  @include mq($sm) {
+		height: 260px;
+		border-radius: 15px;
+	  }
 	  .intro__content-container {
 		height: 100%;
 	  }
 	  .intro__content-item {
-		border: saddlebrown solid 3px;
-		p {
+		p, .intro-typed span {
 		  color: white;
 		  font-family: 'Staatliches', cursive;
 		  font-size: 80px;
 		  letter-spacing: 0.05em;
 		  white-space: nowrap;
+		  overflow: hidden;
+		  cursor: default;
 		  @include mq("1000px") {
 			font-size: 75px;
 		  }
+		  @include mq($sm) {
+			font-size: 40px;
+		  }
+		}
+		.intro-typed span {
+		  color: $magenta;
 		}
 		p:nth-of-type(1) {
 		  padding-right: 12px;
+
+		  @include mq($md) {
+			line-height: 70px;
+		  }
+		  @include mq($sm) {
+			line-height: 40px;
+		  }
 		}
-		.intro-name {
-		  font-size: 50px;
-		  color: white;
-		  font-family: 'Staatliches', cursive;
-		  letter-spacing: 0.05em;
+		.intro-name-grid {
+		  @include mq($sm) {
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			margin-top: 10px;
+		  }
+		  .intro-name {
+			font-size: 50px;
+			color: white;
+			font-family: 'Staatliches', cursive;
+			letter-spacing: 0.05em;
+			cursor: default;
+			@include mq($sm) {
+			  font-size: 30px;
+			}
+		  }
+		  .ghost-btn {
+			margin-left: 20px;
+			@include mq($sm) {
+			  margin-left: unset;
+			  margin-right: 10px;
+			  transform-origin: left;
+			  transform: scale(0.8);
+			}
+		  }
 		}
-		.ghost-btn {
-		  margin-left: 20px;
-		}
+
 	  }
 	}
-
 	@include mq($sm) {
 	  .intro__content-item {
-		padding: 20px;
+		padding: 30px;
 	  }
+	}
+  }
+  @keyframes hue-rotate {
+	0% {
+	  filter: hue-rotate(0);
+	}
+	30% {
+	  filter: hue-rotate(0);
+	}
+	100% {
+	  filter: hue-rotate(360deg);
 	}
   }
 }
 
-@keyframes hue-rotate {
-  0% {
-	filter: hue-rotate(0);
-  }
-  30% {
-	filter: hue-rotate(0);
-  }
-  100% {
-	filter: hue-rotate(360deg);
-  }
-}
