@@ -11,9 +11,9 @@ import codeIcon from '../../assets/img/skill-code.png';
 import designIcon from '../../assets/img/skill-design.png';
 import cameraIcon from '../../assets/img/skill-camera.png';
 import lightIcon from '../../assets/img/skill-light.png';
-import { skillCards } from '../../types';
+import { SkillCards } from '../../types';
 
-const skillCards: skillCards = [
+const skillCards: SkillCards = [
   {
     title: 'code',
     description:
@@ -36,7 +36,7 @@ const skillCards: skillCards = [
     icon: cameraIcon,
   },
   {
-    title: 'light',
+    title: 'learn',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
       'et minus nobis nostrum obcaecati officiis.',
