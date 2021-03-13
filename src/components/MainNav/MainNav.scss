@@ -3,10 +3,12 @@
 
 #root  {
   .MuiAppBar-root {
-	height: 62px;
+	height: 60px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	z-index: 1000;
+	position: relative;
   }
   .MuiAppBar-colorPrimary {
 	color: #fff;
@@ -40,19 +42,24 @@
 	  min-width: unset;
 	  color: white;
 	  transition: color 0.3s ease;
+	  span {
+		font-size: 24px;
+		letter-spacing: 0.1em;
+		font-family: 'Staatliches', cursive;
+	  }
 	}
-	a {
-	  color: white;
-	  text-decoration: none;
-	  font-family: 'Staatliches', cursive !important;
-	  font-size: 26px;
-	  letter-spacing: 0.1em;
-	}
+	//a {
+	//  color: white;
+	//  text-decoration: none;
+	//  font-family: 'Staatliches', cursive !important;
+	//  font-size: 26px;
+	//  letter-spacing: 0.1em;
+	//}
   }
 }
 
 .MuiDrawer-root {
-  top: 62px !important;
+  top: 60px !important;
   .MuiList-root {
 	width: 240px ;
 	color: white;
@@ -86,10 +93,10 @@
 
 }
 .MuiBackdrop-root {
-  top: 62px !important;
+  top: 60px !important;
 }
 .MuiDrawer-paper {
-  top: 62px !important;
+  top: 60px !important;
   background-color: $black-main !important;
 }
 

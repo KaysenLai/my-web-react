@@ -3,7 +3,7 @@ import './MainNav.scss';
 import { AppBar, Drawer, Tabs, Tab, Container, Hidden, IconButton } from '@material-ui/core';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import navLogo from '../../assets/img/logo-css-sprites.png';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useWindowWidth } from '@react-hook/window-size';
 import { useLocation } from 'react-router-dom';
@@ -53,14 +53,28 @@ const MainNav: React.FC = () => {
     }
   }, [onlyWidth]);
 
+  const history = useHistory();
+
   return (
     <AppBar position="static" className="main-nav">
       <Container className="main-nav-container">
-        <Link to="/" className="main-nav__logo" style={{ backgroundImage: `url(${navLogo})` }} />
+        <div
+          className="main-nav__logo"
+          style={{ backgroundImage: `url(${navLogo})` }}
+          onClick={() => {
+            history.push('/');
+          }}
+        />
         <Hidden smDown>
           <Tabs value={value} onChange={handleChange} indicatorColor="primary">
             {navLinks.map((item, index) => (
-              <Tab key={index} label={<Link to={item.path}>{item.title}</Link>} />
+              <Tab
+                key={index}
+                label={item.title}
+                onClick={() => {
+                  history.push(item.path);
+                }}
+              />
             ))}
           </Tabs>
         </Hidden>
@@ -85,9 +99,12 @@ const MainNav: React.FC = () => {
                   setOpen(false);
                 }}
               >
-                <Link to={item.path}>
-                  <ListItemText primary={item.title} />
-                </Link>
+                <ListItemText
+                  onClick={() => {
+                    history.push(item.path);
+                  }}
+                  primary={item.title}
+                />
               </ListItem>
             ))}
           </List>

@@ -17,6 +17,7 @@ const App: React.FC = () => {
           <Route exact path="/resume" component={ResumePage} />
           <Route exact path="/gallery" component={GalleryPage} />
           <Route exact path="/contact" component={ContactPage} />
+          <Redirect to="/" />
         </Switch>
       </div>
     </Router>
