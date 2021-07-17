@@ -10,9 +10,19 @@ export interface NavLink {
 
 export type NavLinks = Array<NavLink>;
 
-export interface SkillCard {
+export interface ISkillCard {
   title: string;
   description: string;
   icon: any;
 }
-export type SkillCards = Array<SkillCard>;
+
+type ITheme = 'light' | 'dark';
+export interface IProjectCard {
+  title: string;
+  url: string;
+  img: string;
+  theme?: ITheme;
+}
+
+export type ISkillCards = Array<ISkillCard>;
+export type IProjectCards = Array<IProjectCard>;

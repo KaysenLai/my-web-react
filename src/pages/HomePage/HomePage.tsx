@@ -6,14 +6,15 @@ import photo from '../../assets/img/home-page-photo.jpg';
 import photoMask from '../../assets/img/home-page-photo-mask.png';
 import GhostButton from '../../components/GhostButton/GhostButton';
 import Typed from 'react-typed';
-import SkillCard from '../../components/skillCard/skillCard';
+import SkillCard from '../../components/SkillCard/SkillCard';
 import codeIcon from '../../assets/img/skill-code.png';
 import designIcon from '../../assets/img/skill-design.png';
 import cameraIcon from '../../assets/img/skill-camera.png';
 import lightIcon from '../../assets/img/skill-light.png';
-import { SkillCards } from '../../types';
+import { IProjectCards, ISkillCards } from '../../types';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
-const skillCards: SkillCards = [
+const skillCards: ISkillCards = [
   {
     title: 'code',
     description:
@@ -41,6 +42,32 @@ const skillCards: SkillCards = [
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
       'et minus nobis nostrum obcaecati officiis.',
     icon: lightIcon,
+  },
+];
+const projectCards: IProjectCards = [
+  {
+    title: 'Easy Grade',
+    url: 'https://easy-grade.com',
+    img: '/project-img01.jpg',
+    theme: 'light',
+  },
+  {
+    title: 'Weather APP',
+    url: 'https://weather.chaokai.me/',
+    img: '/project-img02.jpg',
+    theme: 'light',
+  },
+  {
+    title: 'Traffic Accident Map',
+    url: 'https://crashmap.chaokai.me/',
+    img: '/project-img03.jpg',
+    theme: 'dark',
+  },
+  {
+    title: 'Video web demo',
+    url: 'https://mymo.chaokai.me/',
+    img: '/project-img04.jpg',
+    theme: 'dark',
   },
 ];
 
@@ -92,25 +119,47 @@ const HomePage: React.FC = () => {
           </div>
         </Container>
       </section>
-      <section className="skill">
+      <section className="skill section--padding">
         <Container>
-          <h2>Skill</h2>
-          <div className="skill-cards">
-            <Grid container justify="center">
-              <Grid container item spacing={4} xs={12} sm={10} md={12}>
-                {skillCards.map((item) => (
-                  <Grid item xs={6} md={3} key={item.title}>
-                    <SkillCard title={item.title} description={item.description} icon={item.icon} />
-                  </Grid>
-                ))}
-              </Grid>
+          <h2>Skills</h2>
+          <Grid container justify="center">
+            <Grid container item spacing={5} xs={12} sm={10} md={12}>
+              {skillCards.map((item) => (
+                <Grid item xs={6} md={3} key={item.title}>
+                  <SkillCard title={item.title} description={item.description} icon={item.icon} />
+                </Grid>
+              ))}
             </Grid>
-          </div>
+          </Grid>
         </Container>
       </section>
-      <section className="cards">
-        <Container>
-          <Typography variant="body1">className="home-page"</Typography>
+      <section className="project">
+        <div className="project__mask" />
+        <Container className="section--padding">
+          <h2>Projects</h2>
+          <Grid container justify="center">
+            <Grid container item spacing={5} xs={12}>
+              {projectCards.map((item) => (
+                <Grid item xs={12} sm={6} key={item.title}>
+                  <ProjectCard title={item.title} url={item.url} img={item.img} theme={item.theme} />
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </Container>
+      </section>
+      <section className="project">
+        <Container className="section--padding">
+          <h2>Gallery</h2>
+          <Grid container justify="center">
+            <Grid container item spacing={5} xs={12}>
+              {projectCards.map((item) => (
+                <Grid item xs={12} sm={6} key={item.title}>
+                  <ProjectCard title={item.title} url={item.url} img={item.img} theme={item.theme} />
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
         </Container>
       </section>
     </main>

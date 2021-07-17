@@ -1,8 +1,8 @@
 import React from 'react';
-import './skillCard.scss';
-import { SkillCard } from '../../types';
+import './SkillCard.scss';
+import { ISkillCard } from '../../types';
 
-const skillCard: React.FC<SkillCard> = (props) => {
+const SkillCard: React.FC<ISkillCard> = (props) => {
   const { title, description, icon } = props;
   return (
     <div className="skill-card">
@@ -21,4 +21,4 @@ const skillCard: React.FC<SkillCard> = (props) => {
   );
 };
 
-export default skillCard;
+export default SkillCard;

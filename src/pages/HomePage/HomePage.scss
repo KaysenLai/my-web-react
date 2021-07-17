@@ -2,7 +2,7 @@
 @import "../../assets/scss/variables";
 
 .home-page {
-  section{
+  section {
 	font-family: 'Staatliches', cursive;
 	min-height: 400px;
 	width: 100%;
@@ -14,7 +14,7 @@
 	line-height: 49px;
 	position: relative;
 	padding-bottom: 20px;
-	margin-left: 32px;
+	margin-left: 36px;
 	letter-spacing: 0.1em;
 	color: white;
 	@include mq($sm) {
@@ -46,6 +46,7 @@
 .home-page .intro {
   position: relative;
   height: 674px;
+  padding: 0;
   @include mq($sm) {
 	height: 400px;
   }
@@ -184,13 +185,7 @@
 
 .skill {
   background-color: $background;
-  padding-top: 60px;
-  padding-bottom: 90px;
 
-  @include mq($sm) {
-	padding-top: 40px;
-	padding-bottom: 60px;
-  }
   .MuiGrid-container {
 	@include mq('750px') {
 	  max-width: 100%;
@@ -198,11 +193,44 @@
 	}
   }
   .MuiGrid-item {
-	@include mq($xl) {
-	  padding: 20px !important;
-	}
+	margin-top: 10px;
 	@include mq($sm) {
-	  padding: 10px !important;
+	  margin-top: 0;
 	}
+  }
+}
+
+.project {
+  background-color: $background;
+  position: relative;
+
+  &-container {
+	padding-top: 60px;
+	padding-bottom: 90px;
+  }
+  h2::before {
+	background-color: $purple;
+  }
+
+  &__mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: linear-gradient(180deg, #6500E0 0%, rgba(158, 31, 218, 0.6) 50%, rgba(158, 31, 218, 0.1) 100%);
+	opacity: 0.3;
+  }
+
+  .MuiGrid-container {
+	margin-top: 0;
+  }
+}
+
+.section--padding {
+  padding-top: 60px;
+  padding-bottom: 90px;
+
+  @include mq($sm) {
+	padding-top: 40px;
+	padding-bottom: 60px;
   }
 }
