@@ -13,6 +13,9 @@
   box-sizing: border-box;
   color: $white-light;
 
+  @include mq(md) {
+	padding: 20px;
+  }
   .aside-info {
 	&__avatar {
 	  width: 100%;

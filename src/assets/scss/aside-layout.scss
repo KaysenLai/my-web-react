@@ -13,6 +13,20 @@
 	box-sizing: border-box;
 	border-radius: $border-radius--small;
   }
+  @include mq(md) {
+	flex-direction: column;
+	&__aside {
+	  margin-right: 0;
+	  margin-bottom: 30px;
+	}
+	&__article {
+	  flex: 7;
+	  background: $white-light;
+	  padding: 6px 20px 20px 20px;
+	  box-sizing: border-box;
+	  border-radius: $border-radius--small;
+	}
+  }
 }
 
 .article {
@@ -33,9 +47,8 @@
 	  background-color: $purple;
 	  top: 4px;
 	  left: 0;
-	  border-radius: $border-radius--micro;
+	  border-radius: 3px;
 	}
-
   }
   &__text {
 	margin-bottom: 12px;

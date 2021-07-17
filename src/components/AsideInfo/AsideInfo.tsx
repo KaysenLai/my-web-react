@@ -43,7 +43,11 @@ const AsideInfo: React.FC = () => {
       </div>
       <div className="aside-info__info">
         <h3 className="aside-info__info__header">Job title</h3>
-        <div className="aside-info__info__content">Front-end Developer</div>
+        <div className="aside-info__info__content">
+          Full-stack Developer
+          <br />
+          Front-end Developer
+        </div>
       </div>
       <div className="aside-info__info">
         <h3 className="aside-info__info__header">location</h3>
