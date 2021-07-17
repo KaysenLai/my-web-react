@@ -9,7 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-
+  text-decoration: none;
 
   h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -20,3 +20,50 @@
   font-family: 'Staatliches', cursive;
 }
 
+.page {
+  width: 100%;
+  background-color: $background;
+  min-height: 1080px;
+  padding-bottom: 50px;
+  &-container {
+    margin-top: 50px;
+    padding: 0 26px;
+  }
+
+  @include mq(sm) {
+    .page-header {
+      height: 210px;
+      &__container {
+        padding-left: 45px;
+        h2 {
+          font-size: 50px;
+          &::after {
+            width: 12px;
+            height: 76px;
+            left: -26px;
+            top: 12px;
+            border-radius: 2px;
+          }
+        }
+        h3 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+.aside-layout {
+  display: flex;
+  &__aside {
+    flex: 2;
+  }
+  &__article {
+    flex: 7;
+    border: green solid 1px;
+    background: $white-light;
+    padding: 16px 40px 40px 40px;
+    box-sizing: border-box;
+    border-radius: $border-radius--small;
+  }
+}

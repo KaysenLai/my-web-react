@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import ResumePage from './pages/ResumePage/ResumePage';
 import GalleryPage from './pages/GalleryPage/GalleryPage';
 import ContactPage from './pages/ContactPage/ContactPage';
+import Footer from './components/Footer/Footer';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route exact path="/contact" component={ContactPage} />
           <Redirect to="/" />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

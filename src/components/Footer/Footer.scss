@@ -1,0 +1,122 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/media-queries";
+
+.footer {
+  width: 100%;
+  background: $black-main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__content {
+	color: $grey;
+	width: 100%;
+	max-width: 1440px;
+	padding: 20px 120px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	section {
+	  padding: 15px;
+	  display: flex;
+	  justify-content: center;
+	  h2 {
+		font-size: 24px;
+		line-height: 50px;
+		font-weight: 500;
+	  }
+	}
+	&__icon {
+	  flex: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  img {
+		width: 100px;
+	  }
+	}
+	&__about-web {
+	  flex: 3;
+	  &__content {
+		p {
+		  font-size: 16px;
+		  line-height: 20px;
+		}
+	  }
+	}
+	&__links {
+	  flex: 1;
+	  &__nav {
+		li {
+		  list-style: none;
+		  margin-bottom: 4px;
+		}
+		a {
+		  font-size: 16px;
+		  color: $grey;
+		  text-decoration: none;
+		}
+	  }
+	}
+	&__contact {
+	  font-size: 16px;
+	  flex: 2;
+	  p {
+		line-height: 22px;
+	  }
+	  span {
+		font-weight: bold;
+	  }
+	  &__content__social-icons {
+	  }
+	}
+  }
+  &__copyright {
+	width: 100%;
+	color: $grey;
+	text-align: center;
+	margin-bottom: 50px;
+	h3 {
+	  font-size: 14px;
+	  margin: 4px 0;
+	}
+  }
+  @include mq(lg) {
+	&__content {
+	  padding: 20px 80px;
+	  section {
+		&:nth-of-type(1) {
+		  flex: 0;
+		  padding: 0;
+		}
+	  }
+	  &__icon {
+		img{
+		  display: none;
+		}
+	  }
+	}
+  }
+  @include mq(lg) {
+	&__content {
+	  padding: 20px 30px;
+	}
+  }
+  @include mq(sm) {
+	&__content {
+	  flex-wrap: wrap;
+	  section {
+		width: 100%;
+		justify-content: unset;
+	  }
+	  &__about-web {
+		flex: unset;
+	  }
+	  &__links {
+		flex: unset;
+	  }
+	  &__contact {
+		flex: unset;
+	  }
+	}
+  }
+}

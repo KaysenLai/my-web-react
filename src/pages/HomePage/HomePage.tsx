@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePage.scss';
-import { Container, Hidden, Grid } from '@material-ui/core';
+import { Container, Hidden, Grid, Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import photo from '../../assets/img/home-page-photo.jpg';
 import photoMask from '../../assets/img/home-page-photo-mask.png';
@@ -10,6 +10,7 @@ import SkillCard from '../../components/SkillCard/SkillCard';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import skillCards from '../../mock/skill-card';
 import projectCards from '../../mock/project-card';
+import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   const history = useHistory();
@@ -51,7 +52,9 @@ const HomePage: React.FC = () => {
                     <span className="intro-name">Chaokai Lai</span>
                   </Grid>
                   <Grid item>
-                    <GhostButton title="resume" width={122} onClick={handleOnclick} />
+                    <Link to="/resume">
+                      <GhostButton title="resume" width={122} />
+                    </Link>
                   </Grid>
                 </Grid>
               </Grid>
@@ -101,6 +104,14 @@ const HomePage: React.FC = () => {
             </Grid>
           </Grid>
         </Container>
+      </section>
+      <section className="contact">
+        <div className="contact-wrapper">
+          <h3 className="title-font">feel free to contact me</h3>
+          <Link to="/contact">
+            <Button className="contact-btn">Contact Now</Button>
+          </Link>
+        </div>
       </section>
     </main>
   );

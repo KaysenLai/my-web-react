@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core';
 interface ghostButtonProps {
   title: string;
   width: number;
-  onClick: any;
+  onClick?: any;
 }
 
 const GhostButton: React.FC<ghostButtonProps> = (props) => {
