@@ -18,9 +18,9 @@ const ResumePage = () => {
       <Container>
         <div className="aside-layout page-container">
           <AsideInfo />
-          <article className="aside-layout__article resume-article">
+          <article className="aside-layout__article article">
             <h3>About Me</h3>
-            <div className="resume-article__text">
+            <div className="article__text">
               <p className="with-arrow"> 2 years hands on experience in web development.</p>
               <p className="with-arrow"> Practical knowledge of web solutions architecture.</p>
               <p className="with-arrow"> Great problems solving and self-learning skills.</p>
@@ -34,7 +34,7 @@ const ResumePage = () => {
               {/*</p>*/}
             </div>
             <h3>Skills</h3>
-            <div className="resume-article__text">
+            <div className="article__text">
               <p className="with-arrow">
                 <strong>Front-End:</strong> HTML5, CSS3, SASS/LESS, styled-component, Bootstrap 4, Responsive Design,
                 JavaScirpt ES6, TypeScript 3.x, JQuery 3.x, Ajax, Axios, ReactJS, React-hooks, Mobx, Redux, Redux-thunk,
@@ -72,20 +72,20 @@ const ResumePage = () => {
               </p>
             </div>
             <h3>Education</h3>
-            <div className="resume-article__text">
+            <div className="article__text">
               <h4>Master of Information Technology</h4>
               <p className="with-arrow">University of Queensland</p>
               <p className="with-arrow">2020.2 - 2021.12</p>
               <p className="with-arrow">GPA: 6.28/7.0</p>
             </div>
-            <div className="resume-article__text">
+            <div className="article__text">
               <h4>Bachelor of Mechanical Manufacture and automation</h4>
               <p className="with-arrow">Central South University</p>
               <p className="with-arrow">2015 - 2019</p>
             </div>
 
             {/*<h3>Internship</h3>*/}
-            {/*<div className="resume-article__text">*/}
+            {/*<div className="article__text">*/}
             {/*  <h4>Intern at UI/UX Design Department</h4>*/}
             {/*  <p className="with-arrow">*/}
             {/*    16/07/2018 - 16/08/2018 <strong>Beijing LKK Design Technology Co.,Ltd.</strong>*/}
