@@ -1,75 +1,15 @@
 import React from 'react';
 import './HomePage.scss';
-import { Container, Typography, Hidden, Grid } from '@material-ui/core';
+import { Container, Hidden, Grid } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import photo from '../../assets/img/home-page-photo.jpg';
 import photoMask from '../../assets/img/home-page-photo-mask.png';
 import GhostButton from '../../components/GhostButton/GhostButton';
 import Typed from 'react-typed';
 import SkillCard from '../../components/SkillCard/SkillCard';
-import codeIcon from '../../assets/img/skill-code.png';
-import designIcon from '../../assets/img/skill-design.png';
-import cameraIcon from '../../assets/img/skill-camera.png';
-import lightIcon from '../../assets/img/skill-light.png';
-import { IProjectCards, ISkillCards } from '../../types';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-
-const skillCards: ISkillCards = [
-  {
-    title: 'code',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
-      'et minus nobis nostrum obcaecati officiis.',
-    icon: codeIcon,
-  },
-  {
-    title: 'design',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
-      'et minus nobis nostrum obcaecati officiis.',
-    icon: designIcon,
-  },
-  {
-    title: 'photography',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
-      'et minus nobis nostrum obcaecati officiis.',
-    icon: cameraIcon,
-  },
-  {
-    title: 'learn',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque delectus, dolorem ' +
-      'et minus nobis nostrum obcaecati officiis.',
-    icon: lightIcon,
-  },
-];
-const projectCards: IProjectCards = [
-  {
-    title: 'Easy Grade',
-    url: 'https://easy-grade.com',
-    img: '/project-img01.jpg',
-    theme: 'light',
-  },
-  {
-    title: 'Weather APP',
-    url: 'https://weather.chaokai.me/',
-    img: '/project-img02.jpg',
-    theme: 'light',
-  },
-  {
-    title: 'Traffic Accident Map',
-    url: 'https://crashmap.chaokai.me/',
-    img: '/project-img03.jpg',
-    theme: 'dark',
-  },
-  {
-    title: 'Video web demo',
-    url: 'https://mymo.chaokai.me/',
-    img: '/project-img04.jpg',
-    theme: 'dark',
-  },
-];
+import skillCards from '../../mock/skill-card';
+import projectCards from '../../mock/project-card';
 
 const HomePage: React.FC = () => {
   const history = useHistory();
